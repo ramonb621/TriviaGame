@@ -1,28 +1,27 @@
 $(document).ready(function(){
-    
+  
 
-let currentQuestion;
+let currentQuestion = ["What is the most popular energy drink in the world?", "What hit show from the 90's starred a family of 5 with yellow skin and big googly eyes?",];
 
 let random;
 
 let answersChoice;
 
 // TIMER CODE //
-let time = 0;
-
 let intervalId;
 
 let clockRunning = false;
 
 function reset(){
-    time = 10;
+    time = "10";
     $("#time-remaining").text("10")
 }
-window.onload = function() {
-    $("#time-remaining").text("10")
-        intervalId = setInterval(time, 1000);
-        clockRunning = true;
-    
+
+// setTimeout(timer, 1000 * 10);
+
+function timeStart(){
+        intervalId = setInterval(decrement, 1000);
+        $("#time-remaining").text(intervalId);
     }
 
 })
