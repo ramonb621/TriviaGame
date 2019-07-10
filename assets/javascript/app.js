@@ -1,8 +1,5 @@
 $(document).ready(function(){
     
-window.onload = function() {
-    $("#time-remaining").text("10")
-    };
 
 let currentQuestion;
 
@@ -18,7 +15,14 @@ let intervalId;
 let clockRunning = false;
 
 function reset(){
-    time = 0;
+    time = 10;
     $("#time-remaining").text("10")
 }
+window.onload = function() {
+    $("#time-remaining").text("10")
+        intervalId = setInterval(time, 1000);
+        clockRunning = true;
+    
+    }
+
 })
