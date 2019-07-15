@@ -1,5 +1,6 @@
 body{
     font-family: 'Teko','Francois One', 'Noticia Text', serif;
+    background-color:lightslategray;
 }
 h1{
     color:gold;
@@ -12,4 +13,18 @@ h1{
     height: auto;
     background-color: royalblue;
     color:whitesmoke;
+}
+.time-remaining{
+    font-size:20pt;
+    text-align: right;
+}
+.questions{
+    display: inline; 
+    font-size: 14pt;
+    letter-spacing: .5pt;
+}
+.multiple-choice{
+    text-align: center;
+    letter-spacing: 1pt;
+    font-size: 12pt;
 }
