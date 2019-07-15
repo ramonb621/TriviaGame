@@ -101,7 +101,25 @@ document.getElementById("answers8-2").innerText = answer.answersChoice.questionS
 document.getElementById("answers8-3").innerText = answer.answersChoice.questionSet8[2];
 document.getElementById("answers8-4").innerText = answer.answersChoice.questionSet8[3];
 
-function scoreKeep(){
+$("input:radio[name='question']").each(function(){ 
+    if(document.getElementById("answers1-3").checked){
+        correctAnswers++;
+    } else {
+        wrongAnswers++;
+    }
+    if(document.getElementById("answers2-2").checked){
+        correctAnswers++;
+    } else {
+        wrongAnswers++;
+    }
+})
+
+// function scoreKeep(){
+//     if(){
+
+//     }
+// }
+function gameSummaryPage(){
 
 }
 // ****** TIMER *****// CURRENTLY WORKING! UNCOMMENT WHEN DONE WRITING FUNCTIONALITY!
