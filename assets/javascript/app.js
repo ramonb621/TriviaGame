@@ -41,7 +41,7 @@ let intervalId;
 // for(i = 0; i < currentQuestion.length; i++);
 
 
-let number = 46;
+let number = 31;
 
 // QUESTIONS //
 document.getElementById("question1").prepend(currentQuestion[0]);
@@ -101,26 +101,71 @@ document.getElementById("answers8-2").innerText = answer.answersChoice.questionS
 document.getElementById("answers8-3").innerText = answer.answersChoice.questionSet8[2];
 document.getElementById("answers8-4").innerText = answer.answersChoice.questionSet8[3];
 
-$("input:radio[name='question']").each(function(){ 
-    if(document.getElementById("answers1-3").checked){
-        correctAnswers++;
-    } else {
-        wrongAnswers++;
-    }
-    if(document.getElementById("answers2-2").checked){
-        correctAnswers++;
-    } else {
-        wrongAnswers++;
-    }
-})
+// $("input:radio[name='question1']").each(function(){ 
 
-// function scoreKeep(){
-//     if(){
+function scoreKeep(){
+    let realAnswer;
+    for(let i = 0; i < answer.answers.length; i++){
+        realAnswer += answer.answers[i];
+        if($("input[name=question1]:checked") === realAnswer){
+            correctAnswers++;
+        } else {
+            wrongAnswers++;
+        }
+        if($("input[name=question2]:checked") === realAnswer){
+            correctAnswers++;
+        } else {
+            wrongAnswers++;
+        }
+        if($("input[name=question3]:checked") === realAnswer){
+            correctAnswers++;
+        } else {
+            wrongAnswers++;
+        }
+        if($("input[name=question4]:checked") === realAnswer){
+            correctAnswers++;
+        } else {
+            wrongAnswers++;
+        }
+        if($("input[name=question5]:checked") === realAnswer){
+            correctAnswers++;
+        } else {
+            wrongAnswers++;
+        }
+        if($("input[name=question6]:checked") === realAnswer){
+            correctAnswers++;
+        } else {
+            wrongAnswers++;
+        }
+        if($("input[name=question7]:checked") === realAnswer){
+            correctAnswers++;
+        } else {
+            wrongAnswers++;
+        }
+        if($("input[name=question8]:checked") === realAnswer){
+            correctAnswers++;
+        } else {
+            wrongAnswers++;
+        }
+        
+        gameSummaryPage();
+    }
+}
 
-//     }
-// }
 function gameSummaryPage(){
-
+    if (scoreKeep() && correctAnswers === 8){
+        wins++;
+        correctAnswers;
+        wrongAnswers;
+    } else {
+        losses++;
+        correctAnswers;
+        wrongAnswers;
+    }
+    $(".wins").append("Wins:" + wins);
+    $(".losses").append("Losses:" + losses);
+    $(".correct-answers").append("Correct Answers:" + correctAnswers);
+    $(".wrong-answers").append("Wrong Answers:" + wrongAnswers);
 }
 // ****** TIMER *****// CURRENTLY WORKING! UNCOMMENT WHEN DONE WRITING FUNCTIONALITY!
 function run(){
@@ -136,6 +181,7 @@ function decrement(){
 }
 function stop(){
     clearInterval(intervalId);
+    gameSummaryPage();
 }
 run();
 
