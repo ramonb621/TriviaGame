@@ -5,14 +5,14 @@ let currentQuestion = ["Which is the most popular energy drink in the US?", "Whi
     
 let answer = {
     answersChoice: {
-        questionSet1: ["Monster", " Bang", " Red Bull", " Rockstar"],
-        questionSet2: ["Full House", " The Simpsons", " Family Matters", " The Wonder Years"],
-        questionSet3: ["Patrick Swayze", " Jean Claude Van Damme", " Chuck Norris", "Sylvester Stallone"],
-        questionSet4: ["Nelly", " Cam'ron", " Sean Paul", " Fat Joe"],
-        questionSet5: ["Forrest Gump", " Titanic", " The Lion King", " Independence Day"],
-        questionSet6: ["1993", " 1986", " 1997", " 1982"],
-        questionSet7: ["Cheetos", " Cool Ranch Doritos", " Cheddar & Sour Cream Ruffles", " Lays Barbecue"],
-        questionSet8: ["Musical Youth", " New Edition", " Boyz 2 Men", " Michael Jackson"]
+        questionSet1: ["Monster", "Bang", "Red Bull", "Rockstar"],
+        questionSet2: ["Full House", "The Simpsons", "Family Matters", "The Wonder Years"],
+        questionSet3: ["Patrick Swayze", "Jean Claude Van Damme", "Chuck Norris", "Sylvester Stallone"],
+        questionSet4: ["Nelly", "Cam'ron", "Sean Paul", "Fat Joe"],
+        questionSet5: ["Forrest Gump", "Titanic", "The Lion King", "Independence Day"],
+        questionSet6: ["1993", "1986", "1997", "1982"],
+        questionSet7: ["Cheetos", "Cool Ranch Doritos", "Cheddar & Sour Cream Ruffles", "Lays Barbecue"],
+        questionSet8: ["Musical Youth", "New Edition", "Boyz 2 Men", "Michael Jackson"]
     },
     answers: [{
         answer1: "Red Bull",
@@ -26,6 +26,8 @@ let answer = {
     }]
 };
 
+// let answerArr= [];
+
 let wins = 0;
 
 let losses = 0;
@@ -34,12 +36,7 @@ let wrongAnswers = 0;
 
 let correctAnswers = 0;
     
-// TIMER CODE //
 let intervalId;
-
-// let clockRunning = false;
-// for(i = 0; i < currentQuestion.length; i++);
-
 
 let number = 31;
 
@@ -60,11 +57,17 @@ document.getElementById("question7").prepend(currentQuestion[6]);
 
 document.getElementById("question8").prepend(currentQuestion[7]);
 
+// function arrayToList(){
+//     for(let i = 0; i < answer.answers.length; i++){
+//         answerArr = answer.answers[i];
+//     }
+// }
+
 // ANSWER CHOICES//
-document.getElementById("answers1-1").append(answer.answersChoice.questionSet1[0]);
-document.getElementById("answers1-2").append(answer.answersChoice.questionSet1[1]);
-document.getElementById("answers1-3").append(answer.answersChoice.questionSet1[2]);
-document.getElementById("answers1-4").append(answer.answersChoice.questionSet1[3]);
+document.getElementById("answers1-1").innerText = answer.answersChoice.questionSet1[0];
+document.getElementById("answers1-2").innerText = answer.answersChoice.questionSet1[1];
+document.getElementById("answers1-3").innerText = answer.answersChoice.questionSet1[2];
+document.getElementById("answers1-4").innerText = answer.answersChoice.questionSet1[3];
 
 document.getElementById("answers2-1").innerText = answer.answersChoice.questionSet2[0];
 document.getElementById("answers2-2").innerText = answer.answersChoice.questionSet2[1];
