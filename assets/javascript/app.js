@@ -104,8 +104,7 @@ document.getElementById("answers8-2").innerText = answer.answersChoice.questionS
 document.getElementById("answers8-3").innerText = answer.answersChoice.questionSet8[2];
 document.getElementById("answers8-4").innerText = answer.answersChoice.questionSet8[3];
 
-// $("input:radio[name='question1']").each(function(){ 
-
+// THE IDEA BEHIND THIS IS TO HAVE THE RADIO BUTTONS COMPARE RIGHT AND WRONG ANSWERS TO ANSWER ARRAY AND LOG THEM AT THE END OF EACH SESSION
 function scoreKeep(){
     // let realAnswer;
     // for(let i = 0; i < answer.answers.length; i++){
@@ -160,6 +159,7 @@ function scoreKeep(){
     
 }
 
+// IS SUPPOSED TO GENERATE END SCORE FOR THE GAME SESSION 
 function gameSummaryPage(){
     if (correctAnswers !== 8){
         wins++;
@@ -175,7 +175,7 @@ function gameSummaryPage(){
     $(".correct-answers").append("Correct Answers:" + correctAnswers);
     $(".wrong-answers").append("Wrong Answers:" + wrongAnswers);
 }
-// ****** TIMER *****// CURRENTLY WORKING! UNCOMMENT WHEN DONE WRITING FUNCTIONALITY!
+// ****** TIMER *****// IS SUPPOSED TO STOP TIMER AND LOG SCORE AT THE END OF SESSION PULLING FROM RADIO BUTTONS BEING CHECKED
 function run(){
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
