@@ -107,56 +107,61 @@ document.getElementById("answers8-4").innerText = answer.answersChoice.questionS
 // $("input:radio[name='question1']").each(function(){ 
 
 function scoreKeep(){
-    let realAnswer;
-    for(let i = 0; i < answer.answers.length; i++){
-        realAnswer += answer.answers[i];
-        if($("input[name=question1]:checked") === realAnswer){
+    // let realAnswer;
+    // for(let i = 0; i < answer.answers.length; i++){
+    //     realAnswer += answer.answers.length[i];
+    //     if($("input[type=radio]:checked") == realAnswer){
+    //        realAnswer + correctAnswers++;
+    //     } else {
+    //         wrongAnswers++;
+    //     }
+        if($("input[name=question1]:checked") == answer.answers[0]){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question2]:checked") === realAnswer){
+        if($("input[name=question2]:checked") == answer.answers[1]){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question3]:checked") === realAnswer){
+        if($("input[name=question3]:checked") == answer.answers[2]){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question4]:checked") === realAnswer){
+        if($("input[name=question4]:checked") == answer.answers[3]){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question5]:checked") === realAnswer){
+        if($("input[name=question5]:checked") == answer.answers[4]){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question6]:checked") === realAnswer){
+        if($("input[name=question6]:checked") == answer.answers[5]){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question7]:checked") === realAnswer){
+        if($("input[name=question7]:checked") == answer.answers[6]){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question8]:checked") === realAnswer){
+        if($("input[name=question8]:checked") == answer.answers[7]){
+            console.log(answer.answers[7]);
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        
         gameSummaryPage();
-    }
+    
 }
 
 function gameSummaryPage(){
-    if (scoreKeep() && correctAnswers === 8){
+    if (correctAnswers !== 8){
         wins++;
         correctAnswers;
         wrongAnswers;
@@ -184,8 +189,7 @@ function decrement(){
 }
 function stop(){
     clearInterval(intervalId);
-    gameSummaryPage();
+    scoreKeep();
 }
 run();
-
 })
