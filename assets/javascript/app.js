@@ -25,6 +25,7 @@ let answer = {
         answer8: "New Edition"
     }]
 };
+let answerPick = answer.answersChoice;
 
 // let answerArr= [];
 
@@ -64,45 +65,45 @@ document.getElementById("question8").prepend(currentQuestion[7]);
 // }
 
 // ANSWER CHOICES//
-document.getElementById("answers1-1").innerText = answer.answersChoice.questionSet1[0];
-document.getElementById("answers1-2").innerText = answer.answersChoice.questionSet1[1];
-document.getElementById("answers1-3").innerText = answer.answersChoice.questionSet1[2];
-document.getElementById("answers1-4").innerText = answer.answersChoice.questionSet1[3];
+document.getElementById("answers1-1").append = answerPick.questionSet1[0];
+document.getElementById("answers1-2").append = answerPick.questionSet1[1];
+document.getElementById("answers1-3").append = answerPick.questionSet1[2];
+document.getElementById("answers1-4").append = answerPick.questionSet1[3];
 
-document.getElementById("answers2-1").innerText = answer.answersChoice.questionSet2[0];
-document.getElementById("answers2-2").innerText = answer.answersChoice.questionSet2[1];
-document.getElementById("answers2-3").innerText = answer.answersChoice.questionSet2[2];
-document.getElementById("answers2-4").innerText = answer.answersChoice.questionSet2[3];
+document.getElementById("answers2-1").append = answerPick.questionSet2[0];
+document.getElementById("answers2-2").append = answerPick.questionSet2[1];
+document.getElementById("answers2-3").append = answerPick.questionSet2[2];
+document.getElementById("answers2-4").append = answerPick.questionSet2[3];
 
-document.getElementById("answers3-1").innerText = answer.answersChoice.questionSet3[0];
-document.getElementById("answers3-2").innerText = answer.answersChoice.questionSet3[1];
-document.getElementById("answers3-3").innerText = answer.answersChoice.questionSet3[2];
-document.getElementById("answers3-4").innerText = answer.answersChoice.questionSet3[3];
+document.getElementById("answers3-1").append = answerPick.questionSet3[0];
+document.getElementById("answers3-2").append = answerPick.questionSet3[1];
+document.getElementById("answers3-3").append = answerPick.questionSet3[2];
+document.getElementById("answers3-4").append = answerPick.questionSet3[3];
 
-document.getElementById("answers4-1").innerText = answer.answersChoice.questionSet4[0];
-document.getElementById("answers4-2").innerText = answer.answersChoice.questionSet4[1];
-document.getElementById("answers4-3").innerText = answer.answersChoice.questionSet4[2];
-document.getElementById("answers4-4").innerText = answer.answersChoice.questionSet4[3];
+document.getElementById("answers4-1").append = answerPick.questionSet4[0];
+document.getElementById("answers4-2").append = answerPick.questionSet4[1];
+document.getElementById("answers4-3").append = answerPick.questionSet4[2];
+document.getElementById("answers4-4").append = answerPick.questionSet4[3];
 
-document.getElementById("answers5-1").innerText = answer.answersChoice.questionSet5[0];
-document.getElementById("answers5-2").innerText = answer.answersChoice.questionSet5[1];
-document.getElementById("answers5-3").innerText = answer.answersChoice.questionSet5[2];
-document.getElementById("answers5-4").innerText = answer.answersChoice.questionSet5[3];
+document.getElementById("answers5-1").append = answerPick.questionSet5[0];
+document.getElementById("answers5-2").append = answerPick.questionSet5[1];
+document.getElementById("answers5-3").append = answerPick.questionSet5[2];
+document.getElementById("answers5-4").append = answerPick.questionSet5[3];
 
-document.getElementById("answers6-1").innerText = answer.answersChoice.questionSet6[0];
-document.getElementById("answers6-2").innerText = answer.answersChoice.questionSet6[1];
-document.getElementById("answers6-3").innerText = answer.answersChoice.questionSet6[2];
-document.getElementById("answers6-4").innerText = answer.answersChoice.questionSet6[3];
+document.getElementById("answers6-1").append = answerPick.questionSet6[0];
+document.getElementById("answers6-2").append = answerPick.questionSet6[1];
+document.getElementById("answers6-3").append = answerPick.questionSet6[2];
+document.getElementById("answers6-4").append = answerPick.questionSet6[3];
 
-document.getElementById("answers7-1").innerText = answer.answersChoice.questionSet7[0];
-document.getElementById("answers7-2").innerText = answer.answersChoice.questionSet7[1];
-document.getElementById("answers7-3").innerText = answer.answersChoice.questionSet7[2];
-document.getElementById("answers7-4").innerText = answer.answersChoice.questionSet7[3];
+document.getElementById("answers7-1").append = answerPick.questionSet7[0];
+document.getElementById("answers7-2").append = answerPick.questionSet7[1];
+document.getElementById("answers7-3").append = answerPick.questionSet7[2];
+document.getElementById("answers7-4").append = answerPick.questionSet7[3];
 
-document.getElementById("answers8-1").innerText = answer.answersChoice.questionSet8[0];
-document.getElementById("answers8-2").innerText = answer.answersChoice.questionSet8[1];
-document.getElementById("answers8-3").innerText = answer.answersChoice.questionSet8[2];
-document.getElementById("answers8-4").innerText = answer.answersChoice.questionSet8[3];
+document.getElementById("answers8-1").append = answerPick.questionSet8[0];
+document.getElementById("answers8-2").append = answerPick.questionSet8[1];
+document.getElementById("answers8-3").append = answerPick.questionSet8[2];
+document.getElementById("answers8-4").append = answerPick.questionSet8[3];
 
 // THE IDEA BEHIND THIS IS TO HAVE THE RADIO BUTTONS COMPARE RIGHT AND WRONG ANSWERS TO ANSWER ARRAY AND LOG THEM AT THE END OF EACH SESSION
 function scoreKeep(){
@@ -114,54 +115,74 @@ function scoreKeep(){
     //     } else {
     //         wrongAnswers++;
     //     }
-        if($("input[name=question1]:checked") == answer.answers[0]){
+    let rightGuess = answer.answers[0];
+
+        $.each($("input[name=question1]:checked"),function(){
+        if($(this).val() == rightGuess.answer1){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question2]:checked") == answer.answers[1]){
+
+        console.log(rightGuess.answer1);
+    })
+        $.each($("input[name=question2]:checked"),function(){
+        if($(this).val() == rightGuess.answer2){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question3]:checked") == answer.answers[2]){
+    })
+        $.each($("input[name=question3]:checked"),function(){
+        if($(this).val() == rightGuess.answer3){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question4]:checked") == answer.answers[3]){
+    })
+        $.each($("input[name=question4]:checked"),function(){
+        if($(this).val() == rightGuess.answer4){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question5]:checked") == answer.answers[4]){
+    })
+        $.each($("input[name=question5]:checked"),function(){
+        if($(this).val() == rightGuess.answer5){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question6]:checked") == answer.answers[5]){
+    })
+    $.each($("input[name=question6]:checked"),function(){
+        if($(this).val() == rightGuess.answer6){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question7]:checked") == answer.answers[6]){
+    })
+    $.each($("input[name=question7]:checked"),function(){
+        if($(this).val() == rightGuess.answer7){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
-        if($("input[name=question8]:checked") == answer.answers[7]){
-            console.log(answer.answers[7]);
+    })
+    $.each($("input[name=question8]:checked"),function(){
+        if($(this).val() == rightGuess.answer8){
             correctAnswers++;
         } else {
             wrongAnswers++;
         }
+        console.log($("input[name=question8]:checked"));
+    })
         gameSummaryPage();
     
 }
 
 // IS SUPPOSED TO GENERATE END SCORE FOR THE GAME SESSION 
 function gameSummaryPage(){
-    if (correctAnswers !== 8){
+    if (correctAnswers === 8){
         wins++;
         correctAnswers;
         wrongAnswers;
@@ -184,12 +205,12 @@ function decrement(){
     number--;
     $("#time-remaining").html(number);
     if (number === 0){
+        scoreKeep();
         stop();
     }
 }
 function stop(){
     clearInterval(intervalId);
-    scoreKeep();
 }
 run();
 })
